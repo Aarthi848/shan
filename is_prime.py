@@ -1,22 +1,18 @@
-# Simple Python Program: Check if a number is prime
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. WRONG-VALIDATION.
 
-def is_prime(num):
-    if num <= 1:
-        return False
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  USER-AGE    PIC X(3).
 
-def main():
-    try:
-        number = int(input("Enter a number: "))
-        if is_prime(number):
-            print(f"{number} is a prime number.")
-        else:
-            print(f"{number} is not a prime number.")
-    except ValueError:
-        print("Please enter a valid integer.")
+       PROCEDURE DIVISION.
+           MOVE "ABC" TO USER-AGE.
 
-if __name__ == "__main__":
-    main()
+           IF USER-AGE > "0" AND USER-AGE < "120"
+               DISPLAY "Age is valid."
+           ELSE
+               DISPLAY "Age is invalid."
+           END-IF.
+
+           STOP RUN.
+
